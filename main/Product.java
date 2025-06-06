@@ -1,3 +1,5 @@
+package main;
+
 public class Product {
     private String name;
     private String category;
@@ -5,6 +7,9 @@ public class Product {
     private String barcode;
 
     public Product(String name, String category, int quantity, String barcode) {
+        if (quantity < 0) {
+            throw new IllegalArgumentException("Quantity cannot be negative");
+        }
         this.name = name;
         this.category = category;
         this.quantity = quantity;

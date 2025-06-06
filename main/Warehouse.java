@@ -1,3 +1,4 @@
+package main;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,8 +16,12 @@ public class Warehouse {
     }
 
     public void addProduct(Product product) {
+        if (product == null) {
+            throw new IllegalArgumentException("Product cannot be null");
+        }
         products.add(product);
     }
+
 
     public void removeProduct(Product product) {
         products.remove(product);
